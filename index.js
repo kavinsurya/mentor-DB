@@ -3,11 +3,12 @@ const mongodb = require('mongodb');
 const client = mongodb.MongoClient;
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const dotenv = require('dotenv').config();
 const app = express();
 
 const url =  "mongodb://localhost:27017";
 
-const port =" https://kavin-mentor.herokuapp.com" || 3000;
+const port =process.env.port|| 3000;
 //middlewares
 app.use(bodyParser.json());
 app.use(cors());
