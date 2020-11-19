@@ -20,7 +20,7 @@ async function data() {
         subject.innerHTML = val.subject;
         
         let deletementor = document.createElement('td');
-        deletementor.innerHTML = `<i class="fa fa-trash" style="font-size:24px; color:red" onclick="deletementor('${val._id}')"></i>`
+        deletementor.innerHTML = `<i class="fa fa-trash" style="font-size:24px; color:red" onclick="deleteMentor('${val._id}')"></i>`
 
         let addstudent = document.createElement('td');
         addstudent.innerHTML = `<i class="fa fa-plus" style="font-size:24px; color:green" onclick="student('${val._id}')"></i>`
@@ -36,7 +36,7 @@ async function data() {
     table.append(tbody);
 }
 
-Data();
+data();
 
 //FUnction to add mentor data
 async function addmentor() {

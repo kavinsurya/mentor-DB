@@ -5,8 +5,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 
-const url = process.env.DB_URL || "mongodb://localhost:27017";
+const url =  "mongodb://localhost:27017";
 
+const port =" https://kavin-mentor.herokuapp.com" || 3000;
 //middlewares
 app.use(bodyParser.json());
 app.use(cors());
@@ -117,6 +118,6 @@ app.delete('/student/:id', async (req, res) => {
 
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Listening to port 3000');
 })
