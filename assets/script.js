@@ -2,7 +2,7 @@ let mentordata;
 
 //To load mentor data
 async function data() {
-    let dataraw = await fetch("http://localhost:3000/mentor");
+    let dataraw = await fetch("https://kavin-mentor.herokuapp.com/mentor");
     mentordata = await dataraw.json();
     let table = document.getElementById('mentordata');
 
@@ -48,7 +48,7 @@ async function addmentor() {
         subject: document.getElementById('subject').value,
     }
 
-    await fetch('http://localhost:3000/mentor', {
+    await fetch('https://kavin-mentor.herokuapp.com/mentor', {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -76,7 +76,7 @@ async function addstudent() {
         mentor: document.getElementById('mentor').value
     }
 
-    await fetch('http://localhost:3000/student', {
+    await fetch('https://kavin-mentor.herokuapp.com/student', {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -90,7 +90,7 @@ async function addstudent() {
 //Delete mentor data
 async function deleteMentor(mentorid) {
     try {
-        let res = await fetch(`http://localhost:3000/mentor/${mentorid}`, {
+        let res = await fetch(`https://kavin-mentor.herokuapp.com/mentor/${mentorid}`, {
             method: "DELETE"
               
         })
@@ -105,7 +105,7 @@ async function deleteMentor(mentorid) {
 //Function to get students for particular mentor
 async function getstudent(mentorname) {
     try {
-        let rawdata = await fetch(`http://localhost:3000/student/${mentorname}`);
+        let rawdata = await fetch(`https://kavin-mentor.herokuapp.com/student/${mentorname}`);
         let studentdata = await rawdata.json();
 
         let ul = document.getElementById('students');

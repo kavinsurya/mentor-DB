@@ -2,7 +2,7 @@ let studentdata;
 
 //Function to get all student details
 async function studentData() {
-    let data = await fetch("http://localhost:3000/student");
+    let data = await fetch("https://kavin-mentor.herokuapp.com/student");
     studentdata = await data.json();
     let table = document.getElementById('studentdata');
 
@@ -32,7 +32,7 @@ studentData();
 //delete student data
 async function deleteStudent(mentorid) {
     try {
-        let res = await fetch(`http://localhost:3000/student/${mentorid}`, {
+        let res = await fetch(`https://kavin-mentor.herokuapp.com/student/${mentorid}`, {
             method: "DELETE"
         })
         let resdata = await console.log("Student details deleted");
